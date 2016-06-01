@@ -6,7 +6,7 @@ I'm also interested in playing with radare.
 In this example, I used radare as the primary disassembler, and angr to perform concolic analysis.
 
 ## the goal
-baby-re is a challenge binary from the [https://github.com/legitbs/quals-2016/tree/master/baby-re](2016 DEFCON Qualifier CTF, provided by LBS). 
+baby-re is a challenge binary from the [2016 DEFCON Qualifier CTF, provided by LBS](https://github.com/legitbs/quals-2016/tree/master/baby-re). 
 
 It's a 64-bit ELF for Linux.
 
