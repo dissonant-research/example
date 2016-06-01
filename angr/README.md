@@ -19,7 +19,7 @@ main() is very simple. Take a look at the [radare2 disassembly in main.dis](http
 
 It reads in Var0-Var12 using scanf, then checks the values using a CheckSolution() function. On success, it will print out a success message with the flag string. On failure, it prints out "Wrong". That's the wrong program.
 
-!(https://raw.githubusercontent.com/dissonant-research/examples/master/angr/main1.png "Very Simple")
+![](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/main1.png "Very Simple")
 
 Looking at CheckSolution(), things get a significantly more hairy, fast. You can see this from the [sheer size of the basic block graph](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/baby-re-CheckSolution-bbgraph.png) (bb graph generated using IDA), as well as  [going through the disassembly](https://github.com/dissonant-research/examples/blob/master/angr/check-solution.dis).
 
