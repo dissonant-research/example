@@ -1,0 +1,276 @@
+/ (fcn) sym.main 906
+|           0x004025e7    55           push rbp
+|           0x004025e8    4889e5       mov rbp, rsp
+|           0x004025eb    4156         push r14
+|           0x004025ed    4155         push r13
+|           0x004025ef    4154         push r12
+|           0x004025f1    53           push rbx
+|           0x004025f2    4883ec40     sub rsp, 0x40
+|           0x004025f6    64488b04252. mov rax, [fs:0x28]
+|           0x004025ff    488945d8     mov [rbp-0x28], rax
+|           0x00402603    31c0         xor eax, eax
+|           0x00402605    bf082a4000   mov edi, str.Var0
+|           0x0040260a    b800000000   mov eax, 0x0
+|           ; CODE (CALL) XREF from 0x00400580 (sym.imp.printf)
+|           0x0040260f    e86cdfffff   call sym.imp.printf
+|              sym.imp.printf(unk, unk, unk, unk, unk)
+|           ; DATA XREF from 0x00403058 (unk)
+|           0x00402614    488b053d0a2. mov rax, [rip+0x200a3d] ; 0x00403058 
+|           0x0040261b    4889c7       mov rdi, rax
+|           ; CODE (CALL) XREF from 0x004005a0 (sym.imp.fflush)
+|           0x0040261e    e87ddfffff   call sym.imp.fflush
+|              sym.imp.fflush()
+|           0x00402623    488d45a0     lea rax, [rbp-0x60]
+|           0x00402627    4889c6       mov rsi, rax
+|           0x0040262a    bf112a4000   mov edi, str.d
+|           0x0040262f    b800000000   mov eax, 0x0
+|           ; CODE (CALL) XREF from 0x004005b0 (sym.imp.__isoc99_scanf)
+|           0x00402634    e877dfffff   call sym.imp.__isoc99_scanf
+|              sym.imp.__isoc99_scanf()
+|           0x00402639    bf142a4000   mov edi, str.Var1
+|           0x0040263e    b800000000   mov eax, 0x0
+|           0x00402643    e838dfffff   call sym.imp.printf
+|              sym.imp.printf()
+|           ; DATA XREF from 0x00403058 (unk)
+|           0x00402648    488b05090a2. mov rax, [rip+0x200a09] ; 0x00403058 
+|           0x0040264f    4889c7       mov rdi, rax
+|           0x00402652    e849dfffff   call sym.imp.fflush
+|              sym.imp.fflush()
+|           0x00402657    488d45a0     lea rax, [rbp-0x60]
+|           0x0040265b    4883c004     add rax, 0x4
+|           0x0040265f    4889c6       mov rsi, rax
+|           0x00402662    bf112a4000   mov edi, str.d
+|           0x00402667    b800000000   mov eax, 0x0
+|           0x0040266c    e83fdfffff   call sym.imp.__isoc99_scanf
+|              sym.imp.__isoc99_scanf()
+|           0x00402671    bf1d2a4000   mov edi, str.Var2
+|           0x00402676    b800000000   mov eax, 0x0
+|           0x0040267b    e800dfffff   call sym.imp.printf
+|              sym.imp.printf()
+|           ; DATA XREF from 0x00403058 (unk)
+|           0x00402680    488b05d1092. mov rax, [rip+0x2009d1] ; 0x00403058 
+|           0x00402687    4889c7       mov rdi, rax
+|           0x0040268a    e811dfffff   call sym.imp.fflush
+|              sym.imp.fflush()
+|           0x0040268f    488d45a0     lea rax, [rbp-0x60]
+|           0x00402693    4883c008     add rax, 0x8
+|           0x00402697    4889c6       mov rsi, rax
+|           0x0040269a    bf112a4000   mov edi, str.d
+|           0x0040269f    b800000000   mov eax, 0x0
+|           0x004026a4    e807dfffff   call sym.imp.__isoc99_scanf
+|              sym.imp.__isoc99_scanf()
+|           0x004026a9    bf262a4000   mov edi, str.Var3
+|           0x004026ae    b800000000   mov eax, 0x0
+|           0x004026b3    e8c8deffff   call sym.imp.printf
+|              sym.imp.printf()
+|           ; DATA XREF from 0x00403058 (unk)
+|           0x004026b8    488b0599092. mov rax, [rip+0x200999] ; 0x00403058 
+|           0x004026bf    4889c7       mov rdi, rax
+|           0x004026c2    e8d9deffff   call sym.imp.fflush
+|              sym.imp.fflush()
+|           0x004026c7    488d45a0     lea rax, [rbp-0x60]
+|           0x004026cb    4883c00c     add rax, 0xc
+|           0x004026cf    4889c6       mov rsi, rax
+|           0x004026d2    bf112a4000   mov edi, str.d
+|           0x004026d7    b800000000   mov eax, 0x0
+|           0x004026dc    e8cfdeffff   call sym.imp.__isoc99_scanf
+|              sym.imp.__isoc99_scanf()
+|           0x004026e1    bf2f2a4000   mov edi, str.Var4
+|           0x004026e6    b800000000   mov eax, 0x0
+|           0x004026eb    e890deffff   call sym.imp.printf
+|              sym.imp.printf()
+|           ; DATA XREF from 0x00403058 (unk)
+|           0x004026f0    488b0561092. mov rax, [rip+0x200961] ; 0x00403058 
+|           0x004026f7    4889c7       mov rdi, rax
+|           0x004026fa    e8a1deffff   call sym.imp.fflush
+|              sym.imp.fflush()
+|           0x004026ff    488d45a0     lea rax, [rbp-0x60]
+|           0x00402703    4883c010     add rax, 0x10
+|           0x00402707    4889c6       mov rsi, rax
+|           0x0040270a    bf112a4000   mov edi, str.d
+|           0x0040270f    b800000000   mov eax, 0x0
+|           0x00402714    e897deffff   call sym.imp.__isoc99_scanf
+|              sym.imp.__isoc99_scanf()
+|           0x00402719    bf382a4000   mov edi, str.Var5
+|           0x0040271e    b800000000   mov eax, 0x0
+|           0x00402723    e858deffff   call sym.imp.printf
+|              sym.imp.printf()
+|           ; DATA XREF from 0x00403058 (unk)
+|           0x00402728    488b0529092. mov rax, [rip+0x200929] ; 0x00403058 
+|           0x0040272f    4889c7       mov rdi, rax
+|           0x00402732    e869deffff   call sym.imp.fflush
+|              sym.imp.fflush()
+|           0x00402737    488d45a0     lea rax, [rbp-0x60]
+|           0x0040273b    4883c014     add rax, 0x14
+|           0x0040273f    4889c6       mov rsi, rax
+|           0x00402742    bf112a4000   mov edi, str.d
+|           0x00402747    b800000000   mov eax, 0x0
+|           0x0040274c    e85fdeffff   call sym.imp.__isoc99_scanf
+|              sym.imp.__isoc99_scanf()
+|           0x00402751    bf412a4000   mov edi, str.Var6
+|           0x00402756    b800000000   mov eax, 0x0
+|           0x0040275b    e820deffff   call sym.imp.printf
+|              sym.imp.printf()
+|           ; DATA XREF from 0x00403058 (unk)
+|           0x00402760    488b05f1082. mov rax, [rip+0x2008f1] ; 0x00403058 
+|           0x00402767    4889c7       mov rdi, rax
+|           0x0040276a    e831deffff   call sym.imp.fflush
+|              sym.imp.fflush()
+|           0x0040276f    488d45a0     lea rax, [rbp-0x60]
+|           0x00402773    4883c018     add rax, 0x18
+|           0x00402777    4889c6       mov rsi, rax
+|           0x0040277a    bf112a4000   mov edi, str.d
+|           0x0040277f    b800000000   mov eax, 0x0
+|           0x00402784    e827deffff   call sym.imp.__isoc99_scanf
+|              sym.imp.__isoc99_scanf()
+|           0x00402789    bf4a2a4000   mov edi, str.Var7
+|           0x0040278e    b800000000   mov eax, 0x0
+|           0x00402793    e8e8ddffff   call sym.imp.printf
+|              sym.imp.printf()
+|           ; DATA XREF from 0x00403058 (unk)
+|           0x00402798    488b05b9082. mov rax, [rip+0x2008b9] ; 0x00403058 
+|           0x0040279f    4889c7       mov rdi, rax
+|           0x004027a2    e8f9ddffff   call sym.imp.fflush
+|              sym.imp.fflush()
+|           0x004027a7    488d45a0     lea rax, [rbp-0x60]
+|           0x004027ab    4883c01c     add rax, 0x1c
+|           0x004027af    4889c6       mov rsi, rax
+|           0x004027b2    bf112a4000   mov edi, str.d
+|           0x004027b7    b800000000   mov eax, 0x0
+|           0x004027bc    e8efddffff   call sym.imp.__isoc99_scanf
+|              sym.imp.__isoc99_scanf()
+|           0x004027c1    bf532a4000   mov edi, str.Var8
+|           0x004027c6    b800000000   mov eax, 0x0
+|           0x004027cb    e8b0ddffff   call sym.imp.printf
+|              sym.imp.printf()
+|           ; DATA XREF from 0x00403058 (unk)
+|           0x004027d0    488b0581082. mov rax, [rip+0x200881] ; 0x00403058 
+|           0x004027d7    4889c7       mov rdi, rax
+|           0x004027da    e8c1ddffff   call sym.imp.fflush
+|              sym.imp.fflush()
+|           0x004027df    488d45a0     lea rax, [rbp-0x60]
+|           0x004027e3    4883c020     add rax, 0x20
+|           0x004027e7    4889c6       mov rsi, rax
+|           0x004027ea    bf112a4000   mov edi, str.d
+|           0x004027ef    b800000000   mov eax, 0x0
+|           0x004027f4    e8b7ddffff   call sym.imp.__isoc99_scanf
+|              sym.imp.__isoc99_scanf()
+|           0x004027f9    bf5c2a4000   mov edi, str.Var9
+|           0x004027fe    b800000000   mov eax, 0x0
+|           0x00402803    e878ddffff   call sym.imp.printf
+|              sym.imp.printf()
+|           ; DATA XREF from 0x00403058 (unk)
+|           0x00402808    488b0549082. mov rax, [rip+0x200849] ; 0x00403058 
+|           0x0040280f    4889c7       mov rdi, rax
+|           0x00402812    e889ddffff   call sym.imp.fflush
+|              sym.imp.fflush()
+|           0x00402817    488d45a0     lea rax, [rbp-0x60]
+|           0x0040281b    4883c024     add rax, 0x24
+|           0x0040281f    4889c6       mov rsi, rax
+|           0x00402822    bf112a4000   mov edi, str.d
+|           0x00402827    b800000000   mov eax, 0x0
+|           0x0040282c    e87fddffff   call sym.imp.__isoc99_scanf
+|              sym.imp.__isoc99_scanf()
+|           0x00402831    bf652a4000   mov edi, str.Var10
+|           0x00402836    b800000000   mov eax, 0x0
+|           0x0040283b    e840ddffff   call sym.imp.printf
+|              sym.imp.printf()
+|           ; DATA XREF from 0x00403058 (unk)
+|           0x00402840    488b0511082. mov rax, [rip+0x200811] ; 0x00403058 
+|           0x00402847    4889c7       mov rdi, rax
+|           0x0040284a    e851ddffff   call sym.imp.fflush
+|              sym.imp.fflush()
+|           0x0040284f    488d45a0     lea rax, [rbp-0x60]
+|           0x00402853    4883c028     add rax, 0x28
+|           0x00402857    4889c6       mov rsi, rax
+|           0x0040285a    bf112a4000   mov edi, str.d
+|           0x0040285f    b800000000   mov eax, 0x0
+|           0x00402864    e847ddffff   call sym.imp.__isoc99_scanf
+|              sym.imp.__isoc99_scanf()
+|           0x00402869    bf6f2a4000   mov edi, str.Var11
+|           0x0040286e    b800000000   mov eax, 0x0
+|           0x00402873    e808ddffff   call sym.imp.printf
+|              sym.imp.printf()
+|           ; DATA XREF from 0x00403058 (unk)
+|           0x00402878    488b05d9072. mov rax, [rip+0x2007d9] ; 0x00403058 
+|           0x0040287f    4889c7       mov rdi, rax
+|           0x00402882    e819ddffff   call sym.imp.fflush
+|              sym.imp.fflush()
+|           0x00402887    488d45a0     lea rax, [rbp-0x60]
+|           0x0040288b    4883c02c     add rax, 0x2c
+|           0x0040288f    4889c6       mov rsi, rax
+|           0x00402892    bf112a4000   mov edi, str.d
+|           0x00402897    b800000000   mov eax, 0x0
+|           0x0040289c    e80fddffff   call sym.imp.__isoc99_scanf
+|              sym.imp.__isoc99_scanf()
+|           0x004028a1    bf792a4000   mov edi, str.Var12
+|           0x004028a6    b800000000   mov eax, 0x0
+|           0x004028ab    e8d0dcffff   call sym.imp.printf
+|              sym.imp.printf()
+|           ; DATA XREF from 0x00403058 (unk)
+|           0x004028b0    488b05a1072. mov rax, [rip+0x2007a1] ; 0x00403058 
+|           0x004028b7    4889c7       mov rdi, rax
+|           0x004028ba    e8e1dcffff   call sym.imp.fflush
+|              sym.imp.fflush()
+|           0x004028bf    488d45a0     lea rax, [rbp-0x60]
+|           0x004028c3    4883c030     add rax, 0x30
+|           0x004028c7    4889c6       mov rsi, rax
+|           0x004028ca    bf112a4000   mov edi, str.d
+|           0x004028cf    b800000000   mov eax, 0x0
+|           0x004028d4    e8d7dcffff   call sym.imp.__isoc99_scanf
+|              sym.imp.__isoc99_scanf()
+|           0x004028d9    488d45a0     lea rax, [rbp-0x60]
+|           0x004028dd    4889c7       mov rdi, rax
+|           0x004028e0    e8e1ddffff   call sym.CheckSolution
+|              sym.CheckSolution()
+|           0x004028e5    84c0         test al, al
+|       ,=< 0x004028e7    7458         jz 0x402941
+|       |   0x004028e9    448b65d0     mov r12d, [rbp-0x30]
+|       |   0x004028ed    8b5dcc       mov ebx, [rbp-0x34]
+|       |   0x004028f0    448b5dc8     mov r11d, [rbp-0x38]
+|       |   0x004028f4    448b55c4     mov r10d, [rbp-0x3c]
+|       |   0x004028f8    448b4dc0     mov r9d, [rbp-0x40]
+|       |   0x004028fc    448b45bc     mov r8d, [rbp-0x44]
+|       |   0x00402900    8b7db8       mov edi, [rbp-0x48]
+|       |   0x00402903    8b75b4       mov esi, [rbp-0x4c]
+|       |   0x00402906    448b75b0     mov r14d, [rbp-0x50]
+|       |   0x0040290a    448b6dac     mov r13d, [rbp-0x54]
+|       |   0x0040290e    8b4da8       mov ecx, [rbp-0x58]
+|       |   0x00402911    8b55a4       mov edx, [rbp-0x5c]
+|       |   0x00402914    8b45a0       mov eax, [rbp-0x60]
+|       |   0x00402917    4154         push r12
+|       |   0x00402919    53           push rbx
+|       |   0x0040291a    4153         push r11
+|       |   0x0040291c    4152         push r10
+|       |   0x0040291e    4151         push r9
+|       |   0x00402920    4150         push r8
+|       |   0x00402922    57           push rdi
+|       |   0x00402923    56           push rsi
+|       |   0x00402924    4589f1       mov r9d, r14d
+|       |   0x00402927    4589e8       mov r8d, r13d
+|       |   0x0040292a    89c6         mov esi, eax
+|       |   0x0040292c    bf882a4000   mov edi, 0x402a88
+|       |   0x00402931    b800000000   mov eax, 0x0
+|       |   0x00402936    e845dcffff   call sym.imp.printf
+|       |      sym.imp.printf(unk, unk, unk, unk, unk, unk, unk, unk)
+|       |   0x0040293b    4883c440     add rsp, 0x40
+|      ,==< 0x0040293f    eb0a         jmp loc.0040294b
+|      |`-> 0x00402941    bfb12a4000   mov edi, str.Wrong
+|      |    0x00402946    e815dcffff   call sym.imp.puts
+|      |       sym.imp.puts()
+|      |    ; CODE (CALL) XREF from 0x0040293f (sym.main)
+|- loc.0040294b 38
+|      `--> 0x0040294b    b800000000   mov eax, 0x0
+|           0x00402950    488b5dd8     mov rbx, [rbp-0x28]
+|           0x00402954    6448331c252. xor rbx, [fs:0x28]
+|     ,===< 0x0040295d    7405         jz 0x402964
+|     |     ; CODE (CALL) XREF from 0x00400570 (sym.imp.__stack_chk_fail)
+|     |     0x0040295f    e80cdcffff   call sym.imp.__stack_chk_fail
+|     |        sym.imp.__stack_chk_fail()
+|     `---> 0x00402964    488d65e0     lea rsp, [rbp-0x20]
+|           0x00402968    5b           pop rbx
+|           0x00402969    415c         pop r12
+|           0x0040296b    415d         pop r13
+|           0x0040296d    415e         pop r14
+|           0x0040296f    5d           pop rbp
+\           0x00402970    c3           ret
