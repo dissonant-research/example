@@ -41,3 +41,10 @@ We already have everything we need to know about the binary in order to find a f
 
 Using angr's python interface, [baby-re-simple.py is a simple solution](https://github.com/dissonant-research/examples/blob/master/angr/baby-re-simple.py) which finds a solution in about 3:45 minutes on my workstation.
 
+![](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/angr_time.png)
+
+"Math is hard!" turned out to be the solution for satisfying the system of linear equations in CheckSolution(), and we were able to determine that using a generic binary analysis tool within a few miutes, versus reverse engineering the equations by hand.
+
+By mapping the ASCII values back into integers, we can run baby-re again and verify the correct values:
+
+![](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/solution_ui.png)
