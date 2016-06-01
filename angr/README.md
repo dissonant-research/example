@@ -35,9 +35,9 @@ According to LBS's write-up of the source, they are asking you to input coeffici
 That looks like a lot of work. Which leads us to...
 
 ## angr
-However, we have angr. And angr contains a symbolic analysis engine for automatically modeling code logic, to look for a defined solution state.
+Doing things by hand is hard; luckily, we have plenty of angr. Angr contains a symbolic analysis engine for automatically modeling code logic, and path-finders to look for a defined solution state by using that symbolic modeling with concrete values (hence, "concolic").
 
-We already have everything we need to know about the binary in order to find a flag. We know that executing 0x0040292c grabs the success string to be printed, and executing 0x402941 grabs the failure string to be printed. We have no idea what the state of each of the 13 characters will be when it reaches a success state, but that doesn't matter; we can let angr grind away for any possible values which will satisfy a path to 0x0040292c, while avoiding any paths that lead to 0x402941.
+We already have everything we need to know about the binary in order to find a flag. We know that executing 0x0040292c grabs the success string to be printed, and executing 0x402941 grabs the failure string to be printed. We have no idea what the state of each of the 13 characters will be when it reaches a success state, but that doesn't matter; we can let angr grind away for possible values which will satisfy a path to 0x0040292c, while avoiding any paths that lead to 0x402941.
 
-Using angr's python interface, [baby-re-simple.py is a simple solution](https://github.com/dissonant-research/examples/blob/master/angr/baby-re-simple.py) which finds a solution in about 3.5 miutes on my workstation.
+Using angr's python interface, [baby-re-simple.py is a simple solution](https://github.com/dissonant-research/examples/blob/master/angr/baby-re-simple.py) which finds a solution in about 3:45 minutes on my workstation.
 
