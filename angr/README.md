@@ -14,18 +14,25 @@ When run, it prompts the user to enter values for Var0, Var1, Var2, ..., Var12.
 
 If anything incorrect is entered, it stops and exits. 
 
+![](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/ui.png)
+
 ## disassembling
 main() is very simple. Take a look at the [radare2 disassembly in main.dis](https://github.com/dissonant-research/examples/blob/master/angr/main.dis).
 
 It reads in Var0-Var12 using scanf, then checks the values using a CheckSolution() function. On success, it will print out a success message with the flag string. On failure, it prints out "Wrong". That's the wrong program.
 
+Here's a crop of the call to CheckSolution() and accesses to the solution/failure strings:
 ![](https://raw.githubusercontent.com/dissonant-research/examples/8c4d774754126b89e2a321806ef7ebb3ff3d463e/angr/main1.png "Very Simple")
 
 Looking at CheckSolution(), things get a significantly more hairy, fast. You can see this from the [sheer size of the basic block graph](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/baby-re-CheckSolution-bbgraph.png) (bb graph generated using IDA), as well as  [going through the disassembly](https://github.com/dissonant-research/examples/blob/master/angr/check-solution.dis).
 
+![](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/baby-re-CheckSolution-bbgraph.png)
+
 According to LBS's write-up of the source, they are asking you to input coefficients for a set of linear equations. When the correct coefficients are found, CheckSolution() will generate the flag to be printed. This would normally require reverse engineering the function to the point where an algebraic model can be created to reach the solution.
 
-That sounds like a lot of work.
+[In fact, here's the original source code.](https://raw.githubusercontent.com/legitbs/quals-2016/master/baby-re/baby-re.c)
+
+That looks like a lot of work. Which leads us to...
 
 ## angr
 However, we have angr. And angr contains a symbolic analysis engine for automatically modeling code logic, to look for a defined solution state.
