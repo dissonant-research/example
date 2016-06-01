@@ -27,7 +27,9 @@ Looking at CheckSolution(), things get a significantly more hairy, fast. You can
 
 According to LBS's write-up of the source, they are asking you to input coefficients for a set of linear equations. When the correct coefficients are found, CheckSolution() will generate the flag to be printed. This would normally require reverse engineering the function to the point where an algebraic model can be created to reach the solution.
 
-That sounds like a lot of work. Which leads us to...
+[In fact, here's the original source code.](https://raw.githubusercontent.com/legitbs/quals-2016/master/baby-re/baby-re.c)
+
+That looks like a lot of work. Which leads us to...
 
 ## angr
 However, we have angr. And angr contains a symbolic analysis engine for automatically modeling code logic, to look for a defined solution state.
