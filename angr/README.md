@@ -26,6 +26,8 @@ Here's a crop of the call to CheckSolution() and accesses to the solution/failur
 
 Looking at CheckSolution(), things get a significantly more hairy, fast. You can see this from the [sheer size of the basic block graph](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/baby-re-CheckSolution-bbgraph.png) (bb graph generated using IDA), as well as  [going through the disassembly](https://github.com/dissonant-research/examples/blob/master/angr/check-solution.dis).
 
+![](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/baby-re-CheckSolution-bbgraph.png)
+
 According to LBS's write-up of the source, they are asking you to input coefficients for a set of linear equations. When the correct coefficients are found, CheckSolution() will generate the flag to be printed. This would normally require reverse engineering the function to the point where an algebraic model can be created to reach the solution.
 
 [In fact, here's the original source code.](https://raw.githubusercontent.com/legitbs/quals-2016/master/baby-re/baby-re.c)
