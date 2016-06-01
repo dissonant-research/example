@@ -14,6 +14,8 @@ When run, it prompts the user to enter values for Var0, Var1, Var2, ..., Var12.
 
 If anything incorrect is entered, it stops and exits. 
 
+![](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/ui.png)
+
 ## disassembling
 main() is very simple. Take a look at the [radare2 disassembly in main.dis](https://github.com/dissonant-research/examples/blob/master/angr/main.dis).
 
