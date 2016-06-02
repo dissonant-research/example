@@ -93,8 +93,6 @@ FLAG = state.regs.rbp - 0x60
 print "Solution:", "\"" + state.se.any_str(state.memory.load(FLAG, FLAG_SIZE)) + "\""
 ```
 
-![https://github.com/dissonant-research/examples/blob/master/angr/baby-re-simple.py](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/source_shot.png "https://github.com/dissonant-research/examples/blob/master/angr/baby-re-simple.py")
-
 ![](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/angr_time.png)
 
 "Math is hard!" turned out to be the solution for satisfying the system of linear equations in CheckSolution(), and we were able to determine that using a generic binary analysis tool within a few miutes, versus reverse engineering the equations by hand.
