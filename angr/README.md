@@ -95,7 +95,7 @@ print "Solution:", "\"" + state.se.any_str(state.memory.load(FLAG, FLAG_SIZE)) +
 
 ![](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/angr_time.png)
 
-"Math is hard!" turned out to be the solution for satisfying the system of linear equations in CheckSolution(), and we were able to determine that using a generic binary analysis tool within a few miutes, versus reverse engineering the equations by hand.
+"Math is hard!" turned out to be the solution for satisfying the system of linear equations in CheckSolution(), and we were able to determine that using a generic binary analysis tool within a few minutes, as opposed to reverse engineering the equations by hand.
 
 By mapping the ASCII values back into integers, we can run baby-re again and verify the correct values:
 
