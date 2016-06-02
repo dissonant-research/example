@@ -48,7 +48,7 @@ We already have everything we need to know about the binary in order to find a f
 
 Using angr's python interface, it was possible to [quickly develop baby-re-simple.py](https://github.com/dissonant-research/examples/blob/master/angr/baby-re-simple.py), which finds a solution in about 3:45 minutes on my workstation. This is a brute-force solution, and doesn't make use of most of angr's capabilities.
 
-![https://github.com/dissonant-research/examples/blob/master/angr/baby-re-simple.py](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/source_shot.png)
+![https://github.com/dissonant-research/examples/blob/master/angr/baby-re-simple.py](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/source_shot.png "https://github.com/dissonant-research/examples/blob/master/angr/baby-re-simple.py")
 
 
 ![](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/angr_time.png)
