@@ -21,7 +21,7 @@ main() is very simple. Take a look at the [radare2 disassembly in main.dis](http
 
 It reads in Var0-Var12 using scanf, then checks the values using a CheckSolution() function. On success, it will print out a success message with the flag string. On failure, it prints out "Wrong". That's the wrong program.
 
-Here's a crop of the call to CheckSolution() and accesses to the solution/failure strings:
+Here's a screenshot showing a portion of main(). It's calling CheckSolution() on the input values, then accessing the solution/failure strings, based on the return result:
 ![](https://raw.githubusercontent.com/dissonant-research/examples/8c4d774754126b89e2a321806ef7ebb3ff3d463e/angr/main1.png "Very Simple")
 
 Looking at CheckSolution(), things get a significantly more hairy, fast. It becomes quickly obvious that this is the bulk of the program, by a significant margin. CheckSolution() is about 9 times larger than main(). [Here is radare2's disassembly of the function](https://github.com/dissonant-research/examples/blob/master/angr/check-solution.dis).
