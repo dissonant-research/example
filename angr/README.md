@@ -5,7 +5,7 @@ I'm also interested in playing with radare.
 
 In this example, I used radare as the primary disassembler, and angr to perform concolic analysis.
 
-## the goal
+## Goal
 baby-re is a challenge binary from the [2016 DEFCON Qualifier CTF, provided by LBS](https://github.com/legitbs/quals-2016/tree/master/baby-re). 
 
 It's a 64-bit ELF for Linux.
@@ -15,6 +15,8 @@ When run, it prompts the user to enter values for Var0, Var1, Var2, ..., Var12.
 If anything incorrect is entered, it stops and exits. 
 
 ![](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/ui.png)
+
+We want to figure out what to input, to keep it from being wrong.
 
 That's everything on the surface.
 
