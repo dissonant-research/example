@@ -39,7 +39,7 @@ Things get hairy at this point. CheckSolution() is the bulk of the program, by a
 
 [Here is radare2's disassembly of the function](https://github.com/dissonant-research/examples/blob/master/angr/check-solution.dis).
 
-You can also get an idea of the number of operations by looking at the size of the basic block graph when zoomed all the way out (generated using IDA):
+Here's the function's basic block graph when zoomed all the way out (generated using IDA):
 ![](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/baby-re-CheckSolution-bbgraph.png)
 
 According to LBS's write-up of the source (not available during the CTF, obviously), they are having the user input coefficients for a set of linear equations. When the correct coefficients are found, CheckSolution() will generate the flag to be printed. This would normally require reverse engineering the function to the point where an algebraic model can be created to reach the solution.
