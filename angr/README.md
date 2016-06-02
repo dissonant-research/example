@@ -40,7 +40,9 @@ Doing things by hand is hard; luckily, we have plenty of angr. Angr contains a s
 
 We already have everything we need to know about the binary in order to find a flag. We know that executing 0x0040292c grabs the success string to be printed, and executing 0x402941 grabs the failure string to be printed. We have no idea what the state of each of the 13 characters will be when it reaches a success state, but that doesn't matter; we can let angr grind away for possible values which will satisfy a path to 0x0040292c, while avoiding any paths that lead to 0x402941.
 
-Using angr's python interface, [baby-re-simple.py is a simple solution](https://github.com/dissonant-research/examples/blob/master/angr/baby-re-simple.py) which finds a solution in about 3:45 minutes on my workstation.
+
+
+Using angr's python interface, it was possible to quickly develop [baby-re-simple.py](https://github.com/dissonant-research/examples/blob/master/angr/baby-re-simple.py), which finds a solution in about 3:45 minutes on my workstation.
 
 ![](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/angr_time.png)
 
