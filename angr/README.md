@@ -5,7 +5,9 @@ I'm also interested in playing with radare2.
 
 In this example, I used radare as the disassembler, to learn how to navigate binaries with it. I found [this summary](https://github.com/pwntester/cheatsheets/blob/master/radare2.md) to be extremely useful.
 
-And I used angr to perform concolic analysis, with a particular goal in mind. [Here is an explanation of angr.](http://angr.io/)
+And I used angr to perform concolic analysis, with a particular goal in mind. 
+
+[Here is an explanation of angr.](http://angr.io/)
 
 ## Goal
 baby-re is a challenge binary from the [2016 DEFCON Qualifier CTF, provided by LBS](https://github.com/legitbs/quals-2016/tree/master/baby-re). 
