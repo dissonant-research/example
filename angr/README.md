@@ -100,7 +100,7 @@ print "Solution:", "\"" + state.se.any_str(state.memory.load(FLAG, FLAG_SIZE)) +
 
 ![](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/angr_time.png)
 
-This is essentially a brute-force solution. While CheckSolution() would have taken a while to reverse engineer by hand, it's not strong obfuscation. If the author had chosen to use a (cryptographic) hash function on the inputs, then checked the result against a stored hash, this wouldn't have been nearly so easy.
+This is essentially a brute-force solution, in terms of symbolic analysis; we didn't provide any concreteness aside from the execution address we wanted to find a path to. While CheckSolution() would have taken a while to reverse engineer by hand, it's not strong obfuscation. If the author had chosen to use a (cryptographic) hash function on the inputs, then checked the result against a stored hash, this wouldn't have been nearly so easy. A true brute-force approach would have required searching through all possible combinations, of which there are around 4.47x10<sup>25</sup> for printable characters.
 
 As you can see above, "Math is hard!" turned out to be the solution for satisfying the system of linear equations in CheckSolution(). By mapping the ASCII values back into integers, we can run baby-re again and verify the correct values:
 
