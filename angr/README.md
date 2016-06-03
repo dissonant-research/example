@@ -10,7 +10,7 @@ And I used angr to perform concolic analysis, with a particular goal in mind.
 [Here is an explanation of angr.](http://angr.io/)
 
 ## Goal
-baby-re is a challenge binary from the [2016 DEFCON Qualifier CTF, provided by LBS](https://github.com/legitbs/quals-2016/tree/master/baby-re). 
+baby-re is a challenge binary from the 2016 DEFCON Qualifier CTF, provided by LBS. 
 
 It's a 64-bit ELF for Linux.
 
@@ -39,10 +39,6 @@ So, we drill into CheckSolution(), to determine which values the binary is looki
 
 Here's the function's zoomed-out basic block graph (generated using IDA):
 ![](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/baby-re-CheckSolution-bbgraph.png)
-
-According to LBS's write-up of the source (not available during the CTF, obviously), the Var[0]-Var[12] inputs are coefficients for a set of linear equations defined in CheckSolution(). When the correct coefficients are entered, CheckSolution() verifies them as character values of the flag, and main() prints them. This would normally require reverse engineering the CheckSolution() to recreate the linear equations, and solving them.
-
-[Here's the original source code.](https://raw.githubusercontent.com/legitbs/quals-2016/master/baby-re/baby-re.c)
 
 That looks like a lot of work, though. Especially when the source code wasn't available. Which leads us to...
 
@@ -106,3 +102,7 @@ As you can see above, "Math is hard!" turned out to be the solution for satisfyi
 
 ![](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/solution_ui.png)
 
+## Source Code
+According to [LBS's post-competition source release](https://github.com/legitbs/quals-2016/tree/master/baby-re) (not available during the CTF, obviously), the Var[0]-Var[12] inputs are coefficients for a set of linear equations defined in CheckSolution(). When the correct coefficients are entered, CheckSolution() verifies them as character values of the flag, and main() prints them. This would normally require reverse engineering the CheckSolution() to recreate the linear equations, and solving them.
+
+[Here's the original C source.](https://raw.githubusercontent.com/legitbs/quals-2016/master/baby-re/baby-re.c)
