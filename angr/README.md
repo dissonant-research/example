@@ -47,7 +47,7 @@ According to LBS's write-up of the source (not available during the CTF, obvious
 That looks like a lot of work, though. Especially when the source code wasn't available. Which leads us to...
 
 ## Angr
-Doing things by hand is hard; luckily, we have plenty of angr. Angr contains a symbolic analysis engine for automatically modeling code logic, and path-finders to look for a defined solution state by using that symbolic modeling with concrete values (hence, "concolic").
+Doing things by hand is time consuming; luckily, we have plenty of angr. Angr contains a symbolic analysis engine for automatically modeling code logic, and path-finders to look for a defined solution state by using that symbolic modeling with concrete values (hence, "concolic").
 
 We already have everything we need to know about the binary in order to find a flag. We know that executing 0x0040292c grabs the success string to be printed, and executing 0x402941 grabs the failure string to be printed. We have no idea what the state of each of the 13 characters will be when it reaches a success state, but that doesn't matter; we can let angr grind away for possible values which will satisfy a path to 0x0040292c, while avoiding any paths that lead to 0x402941.
 
