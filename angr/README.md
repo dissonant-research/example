@@ -103,6 +103,6 @@ As you can see above, "Math is hard!" turned out to be the solution for satisfyi
 ![](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/solution_ui.png)
 
 ## Source Code
-According to [LBS's post-competition source release](https://github.com/legitbs/quals-2016/tree/master/baby-re) (not available during the CTF, obviously), the Var[0]-Var[12] inputs are coefficients for a set of linear equations defined in CheckSolution(). When the correct coefficients are entered, CheckSolution() verifies them as character values of the flag, and main() prints them. This would normally require reverse engineering the CheckSolution() to recreate the linear equations, and solving them.
+According to [LBS's post-competition release](https://github.com/legitbs/quals-2016/tree/master/baby-re) (not available during the CTF, obviously), the Var[0]-Var[12] inputs are coefficients for a set of linear equations defined in CheckSolution(). When the correct coefficients are entered, CheckSolution() verifies them as character values of the flag, and main() prints them. This would normally require reverse engineering the CheckSolution() to recreate the linear equations, and solving them.
 
 [Here's the original C source.](https://raw.githubusercontent.com/legitbs/quals-2016/master/baby-re/baby-re.c)
