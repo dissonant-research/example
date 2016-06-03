@@ -47,11 +47,11 @@ According to LBS's write-up of the source (not available during the CTF, obvious
 That looks like a lot of work, though. Especially when the source code wasn't available. Which leads us to...
 
 ## Angr
-Doing things by hand is time consuming; luckily, we have plenty of angr. Angr contains a symbolic analysis engine for automatically modeling code logic, and path-finders to look for a defined solution state by using that symbolic modeling with concrete values (hence, "concolic").
+Doing things by hand is time consuming; luckily, we have plenty of angr. Angr contains a symbolic analysis engine for automatically modeling code logic and finding paths to a concrete solution state. ("Concolic" is a portmanteau of "concrete" & "symbolic.")
 
-We already have everything we need to know about the binary in order to find a flag. We know that executing 0x0040292c grabs the success string to be printed, and executing 0x402941 grabs the failure string to be printed. We have no idea what the state of each of the 13 characters will be when it reaches a success state, but that doesn't matter; we can let angr grind away for possible values which will satisfy a path to 0x0040292c, while avoiding any paths that lead to 0x402941.
+Therefore, we already have everything we need to know about the binary in order to find a flag. We don't have to reverse engineer the linear equations by hand. We see that executing 0x0040292c accesses the success string to be printed, while executing 0x402941 accesses the failure string to be printed. We have no idea what the state of each of the 13 characters will be when it reaches a success state, but that doesn't matter; we can let angr grind away for possible values which will satisfy a path to 0x0040292c. To help it along, we can also tell angr to explicitly avoid any paths that lead to 0x402941.
 
-Using angr's python interface, it was possible to [quickly develop baby-re-simple.py](https://github.com/dissonant-research/examples/blob/master/angr/baby-re-simple.py), which finds a solution in about 3:45 minutes on my workstation. This is a brute-force solution, and doesn't make use of most of angr's capabilities.
+Using angr's python interface, it was possible to [quickly develop baby-re-simple.py](https://github.com/dissonant-research/examples/blob/master/angr/baby-re-simple.py), which finds a solution in less than four minutes on my workstation.
 
 ```python
 #!/usr/bin/env python
@@ -100,8 +100,9 @@ print "Solution:", "\"" + state.se.any_str(state.memory.load(FLAG, FLAG_SIZE)) +
 
 ![](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/angr_time.png)
 
-"Math is hard!" turned out to be the solution for satisfying the system of linear equations in CheckSolution(), and we were able to determine that using a generic binary analysis tool within a few minutes, as opposed to reverse engineering the equations by hand.
+This is essentially a brute-force solution. While CheckSolution() would have taken a while to reverse engineer by hand, it's not strong obfuscation. If the author had chosen to use a (cryptographic) hash function on the inputs, then checked the result against a stored hash, this wouldn't have been nearly so easy.
 
-By mapping the ASCII values back into integers, we can run baby-re again and verify the correct values:
+As you can see above, "Math is hard!" turned out to be the solution for satisfying the system of linear equations in CheckSolution(). By mapping the ASCII values back into integers, we can run baby-re again and verify the correct values:
 
 ![](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/solution_ui.png)
+
