@@ -105,4 +105,4 @@ As you can see above, "Math is hard!" turned out to be the solution for satisfyi
 ## Source Code
 According to [LBS's post-competition release](https://github.com/legitbs/quals-2016/tree/master/baby-re) (not available during the CTF, obviously), the Var[0]-Var[12] inputs are values for a set of linear equations defined in CheckSolution(). When the correct values are entered, CheckSolution() returns 1, and main() prints the values as characters. This would normally require reverse engineering CheckSolution() to recreate the linear equations and solve them.
 
-[Here's the original C source.](https://raw.githubusercontent.com/legitbs/quals-2016/master/baby-re/baby-re.c)
+[Here's the original C source](https://raw.githubusercontent.com/legitbs/quals-2016/master/baby-re/baby-re.c) used to build baby-re.
