@@ -25,24 +25,24 @@ We want to figure out what to input, to keep it from being wrong.
 That's everything on the surface.
 
 ## Disassembling
-main() is [very simple](https://github.com/dissonant-research/examples/blob/master/angr/main.dis).
+```main()``` is [very simple](https://github.com/dissonant-research/examples/blob/master/angr/main.dis).
 
-The primary support function, CheckSolution(), is less simple.
+The primary support function, ```CheckSolution()```, is less simple.
 
-Take a look at the [radare2 disassembly of CheckSolution()](https://github.com/dissonant-research/random-work/blob/master/angr/check-solution.dis). It's about 2000 instructions.
+Take a look at the [radare2 disassembly](https://github.com/dissonant-research/random-work/blob/master/angr/check-solution.dis)  of ```CheckSolution()```. It's about 2000 instructions.
 
 ```main()``` reads in Var[0]-Var[12] using scanf, then verifies the values using CheckSolution(). On success, it will print out a success message with the flag string. On failure, it prints out "Wrong". That's the whole program. Super simple.
 
-Here's a screenshot showing a portion of main(). It's calling CheckSolution() on the input values, then accessing the solution/failure strings, based on the return result:
+Here's a screenshot showing a portion of ```main()```. It's calling ```CheckSolution()```, then accesses either the solution or failure string to print out, based on the return result:
 
 ![](https://raw.githubusercontent.com/dissonant-research/examples/8c4d774754126b89e2a321806ef7ebb3ff3d463e/angr/main1.png "Very Simple")
 
-So, we drill into CheckSolution(), to determine which values the binary is looking for. Things get hairier at this point; CheckSolution() is about 9 times larger than main(). It's obfuscates the check by performing a large number of arithmetic operations on the input values, before checking them against some constants. This is essentially a hashing mechanism, but doesn't appear to be cryptographic in strength.
+Accordingly, we drill down into ```CheckSolution()```, to determine which values will be verified as correct. Things get hairier at this point. ```CheckSolution()``` obfuscates the check by performing a large number of arithmetic operations on the input values, before checking them against some constants and returning true/false. This is basically a hashing mechanism; each input produces a value which is compared against a constant. It doesn't appear to be cryptographic in strength.
 
-Here's the function's zoomed-out basic block graph (generated using IDA):
+Zoomed out, here's the function's basic block graph (generated using IDA):
 ![](https://raw.githubusercontent.com/dissonant-research/examples/master/angr/baby-re-CheckSolution-bbgraph.png)
 
-That looks like a lot of work, though. Especially when the source code wasn't available. Which leads us to...
+Reversing 2000 instructions of arithmetic sounds like a lot of work, though. Which leads us to...
 
 ## Angr
 Doing things by hand is time consuming; luckily, we have plenty of angr. Angr contains a symbolic analysis engine for automatically modeling code logic and finding paths to a concrete solution state. ("Concolic" is a portmanteau of "concrete" & "symbolic.")
