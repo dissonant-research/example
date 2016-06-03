@@ -25,9 +25,11 @@ We want to figure out what to input, to keep it from being wrong.
 That's everything on the surface.
 
 ## Disassembling
-main() is very simple. Take a look at the [radare2 disassembly in main.dis](https://github.com/dissonant-research/examples/blob/master/angr/main.dis).
+main() is [very simple](https://github.com/dissonant-research/examples/blob/master/angr/main.dis).
 
-The primary support function, CheckSolution(), is less simple. Take a look at the [radare2 disassembly in check-solution.dis](https://github.com/dissonant-research/random-work/blob/master/angr/check-solution.dis).
+The primary support function, CheckSolution(), is less simple.
+
+Take a look at the [radare2 disassembly of CheckSolution()](https://github.com/dissonant-research/random-work/blob/master/angr/check-solution.dis). It's about 2000 instructions.
 
 ```main()``` reads in Var[0]-Var[12] using scanf, then verifies the values using CheckSolution(). On success, it will print out a success message with the flag string. On failure, it prints out "Wrong". That's the whole program. Super simple.
 
