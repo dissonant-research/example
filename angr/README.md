@@ -1,4 +1,4 @@
-# A simple angr example (with a little radare2)
+# A simple angr example
 I'm interested in better understanding angr.
 
 I'm also interested in playing with radare2.
